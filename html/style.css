@@ -1,0 +1,70 @@
+body {
+    font-family: "IBM_PLex-Sans", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #F9F9F9;
+}
+
+.main {
+    display: grid;
+    grid-template-areas: "nav nav nav"
+                         "page page page"
+                         "footer footer footer";
+    grid-template-rows: 60px 1fr 70px;
+    grid-template-columns: 20% 1fr 15%;
+    grid-gap: 10px;
+    height: 100vh;
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    grid-area: nav;
+    background-color: #222437;
+}
+
+nav ul {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    width: 100%;
+    padding: 0;
+}
+
+nav ul li {
+    list-style: none;
+    padding: 0 0 0 20px;
+}
+
+nav ul .last {
+    margin: 0 35px 0 auto;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: white;
+}
+
+
+.page {
+    grid-area: page;
+    border: 1px solid black;
+}
+
+.post {
+    max-width: 1050px;
+}
+
+.logo {
+    width: 136px;
+    height: 42px;
+}
+
+footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    background-color: #222437;
+    color: white;
+}
