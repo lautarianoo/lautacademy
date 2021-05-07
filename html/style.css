@@ -1,33 +1,37 @@
+:root {
+    --nav-color: #222437;
+    --count: #3E4551;
+}
+
 body {
-    font-family: "IBM_PLex-Sans", sans-serif;
     margin: 0;
     padding: 0;
     background-color: #F9F9F9;
+    font-family: 'IBM Plex Sans', sans-serif;
 }
 
-.main {
+
+.wrapper {
     display: grid;
-    grid-template-areas: "nav nav nav"
-                         "page page page"
-                         "footer footer footer";
+    grid-template-areas: "nav nav nav" ". main ." "footer footer footer";
     grid-template-rows: 60px 1fr 70px;
-    grid-template-columns: 20% 1fr 15%;
-    grid-gap: 10px;
+    grid-template-columns: minmax(0, 240px) 1fr minmax(0, 240px);
     height: 100vh;
     margin: 0;
 }
 
+/* Navigation */
 nav {
     display: flex;
     grid-area: nav;
-    background-color: #222437;
+    background-color: var(--nav-color);
 }
 
 nav ul {
     display: flex;
+    width: 100%;
     align-items: center;
     margin: 0;
-    width: 100%;
     padding: 0;
 }
 
@@ -42,29 +46,87 @@ nav ul .last {
 
 nav ul li a {
     text-decoration: none;
-    color: white;
+    color: #fff;
+    padding: 18px 0;
+    position: relative;
+    transition: width 0.5s cubic-bezier(0.4, 0, 1, 1);
 }
 
-
-.page {
-    grid-area: page;
-    border: 1px solid black;
+nav ul li a:hover {
+    border-bottom: 2px solid;
 }
 
-.post {
-    max-width: 1050px;
-}
 
 .logo {
     width: 136px;
     height: 42px;
 }
 
+.message {
+    width: 26px;
+    height: 18px;
+    position: relative;
+
+}
+
+.li-message {
+    position: relative;
+}
+
+.counter {
+    position: absolute;
+    color: white;
+    font-size: 12px;
+    width: 20px;
+    height: 20px;
+    background-color: var(--count);
+    top: -10px;
+    right: -5px;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 20px;
+}
+
+/* Content */
+.main {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    grid-area: main;
+    max-width: 1050px;
+    border: 1px solid #000;
+}
+
+.post {
+    max-width: 1050px;
+    width: 1050px;
+    height: 306px;
+    border: 1px solid;
+}
+
+/* Footer */
+
+ .github , .vk{
+    width: 21px;
+    height: 21px;
+}
+
+
+ .youtube {
+    width: 24px;
+    height: 21px;
+    margin: 0 25px 0 25px;
+}
+
+
 footer {
     grid-area: footer;
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
     align-items: center;
-    justify-content: space-evenly;
-    background-color: #222437;
-    color: white;
+    justify-items: center;
+    background-color: var(--nav-color);
+    color: #fff;
 }
+
+
