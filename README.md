@@ -1,14 +1,13 @@
 <p align="center">
-    <a href="https://djangochannel.com" target="_blank" rel="noopener noreferrer">
-        <img width="100" src="docs/_static/logo.png" title="djangochannel">
+    <a href="#" target="_blank" rel="noopener noreferrer">
+        <img width="100" src="docs/_static/195513_1280_800.jpg" title="Laut Academy">
     </a>
 </p>
 
-<h2 align="center">Django Channel</h2>
+<h2 align="center">LAUT ACADEMY</h2>
 
 [![Join the chat at https://gitter.im/djangochannel/community](https://badges.gitter.im/djangochannel/community.svg)](https://gitter.im/djangochannel/community?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
 
-[Сайт](https://djangochannel.com)
 
 ### Описание проекта:
 Проект призван помочь людям в обучении программированию, веб разработке и английскому языку.
@@ -34,31 +33,16 @@
 
 **Как работаем:**
 - Все предложения и найденные ошибки добавляются в виде Issues на GitHub всеми желающими
-- Обсуждаем фичи в чатах Slack и Telegram
-- Над вехами работаем в рамках Projects на GitHub
 - Макеты разрабатываются в Figma
 - Пулреквесты по таскам предлагаются всеми желающими, в комментариях к таскам люди пишут что начали делать и когда планируют закончить.
 - Пул реквесты обсуждаются командой и сливаются в мастер.
 
 **Ссылки**:
-- [Сайт](https://djangochannel.com)
-- [Канал Youtube](https://www.youtube.com/channel/UC_hPYclmFCIENpMUHpPY8FQ?view_as=subscriber)
-- [Доска в Trello](https://trello.com/b/EZzcxWb1/djangochannel)
-- [Ошибки/Вопросы/Предложения](https://github.com/DJWOMS/djangochannel/issues)
-- [Задачи GitHub](https://github.com/DJWOMS/djangochannel/projects/1)
-- [Дизайн экранов в Figma](https://www.figma.com/file/NuuLxaWVtab9X3GjiieTT3/DS-groups?node-id=94%3A80)
-- [Рабочий чат Slack](https://goo-gl.su/DemLTTGJ)
-- [Telegram](https://t.me/trueDjangoChannel)
-- [Группа в VK](https://vk.com/djangochannel)
-- [Поддержать проект](https://donatepay.ru/don/186076)
+- [ВК](https://vk.com/lautariano)
+- [GitHub](https://github.com/lautarianoo)
 
-**Как стать членом команды**:
-- Иметь время на проект
-- Иметь мотивацию сделать Мир лучше
-- Иметь необходимые навыки (если вы ничего не умеете, можно помогать с пиаром)
-- Прочитать манифест (Вы его читаете=)
-- Сделать пулл реквест, который будет смержен в основной проект и пообщаться с текущей командой (голос/переписка)
-- [Прочитать и создать свои Issues](https://github.com/DJWOMS/djangochannel/issues) (вопросы, предложения)
+
+
 
 *Создать Issues можно и тем, кто не хочет работать с нами над проектом, а просто хочет задать вопросы и дать нам совет*
 
@@ -122,15 +106,12 @@
 
 ##### Разработка осуществляется через ветку develop
 
-## Команда
-
-[DJWOMS](https://github.com/DJWOMS) 
 
 ## License
 
 [BSD 3-Clause License](https://opensource.org/licenses/BSD-3-Clause)
 
-Copyright (c) 2019-present, DJWOMS - Omelchenko Michael
+Copyright (c) 2021-present, lautarianoo - Volf Alexander
 
 
 
