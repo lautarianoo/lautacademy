@@ -24,6 +24,10 @@ class TopicsList(ListView):
     def get_queryset(self):
         return Section.objects.filter(slug=self.kwargs.get("slug"))
 
+    def get_context_data(self, *args, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['imported_topics'] = Topic.objects.filter(imported=True)
+        return context
 
 class TopicDetail(ListView):
     """Вывод темы"""

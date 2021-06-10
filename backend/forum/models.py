@@ -83,8 +83,9 @@ class Topic(AbstractDateTimeModel):
         on_delete=models.CASCADE
     )
     title = models.CharField('Название темы', max_length=250)
-    text = RichTextUploadingField('Текст, описание темы', config_name='special')
+    text = models.TextField('Текст, описание темы')
     moderated = models.BooleanField('Просмотрено модератором', default=False)
+    imported = models.BooleanField('Важное', default=False)
     deleted = models.BooleanField('Удалено', default=False)
     private = models.BooleanField('Приватный', default=False)
     members = models.ManyToManyField(
@@ -138,7 +139,7 @@ class Message(AbstractDateTimeModel):
         related_name='message',
         on_delete=models.CASCADE
     )
-    text = RichTextUploadingField('Текст сообщения', config_name='special')
+    text = models.TextField('Текст сообщения')
     moderated = models.BooleanField('Просмотрено модератором', default=False)
     deleted = models.BooleanField('Удалено', default=False)
     readers = models.ManyToManyField(User, blank=True)

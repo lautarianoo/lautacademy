@@ -24,7 +24,7 @@ def send_email(email, code):
     subject = 'Код подтверждения'
     message = 'Введите этот код для подтверждения смены email: {}'.format(code)
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', [email])
+        send_mail(subject, message, 'emailsenddjango@gmail.com', [email])
         return True
     except BadHeaderError:
         return False
@@ -38,7 +38,7 @@ def send_mail_forum(instance):
         instance.title,
         instance.section)
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', ["socanime@gmail.com"])
+        send_mail(subject, message, 'emailsenddjango@gmail.com', ['lautariano777@gmail.com'])
         return True
     except BadHeaderError:
         return False
@@ -51,7 +51,7 @@ def send_mail_contact(instance):
         instance.email,
         instance.title)
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', ["socanime@gmail.com"])
+        send_mail(subject, message, 'emailsenddjango@gmail.com', ["lautariano777@gmail.com"])
         return True
     except BadHeaderError:
         return False
@@ -63,7 +63,7 @@ def send_mail_new_mess(user, email):
     message = 'Здравствуйте, пользователь {}, отправил Вам личное сообщение на сайте djangochannel.com\n ' \
               'Посмотреть его Вы можете у себя в личном кабинете.'.format(user)
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', [email])
+        send_mail(subject, message, 'emailsenddjango@gmail.com', [email])
         return True
     except BadHeaderError:
         return False
@@ -74,7 +74,7 @@ def send_mail_mess_student(emails, subj, mess):
     subject = subj
     message = mess
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', emails, html_message=mess)
+        send_mail(subject, message, 'emailsenddjango@gmail.com', emails, html_message=mess)
         return True
     except BadHeaderError:
         return False
@@ -89,7 +89,7 @@ def send_mail_user_post(instance):
         instance.category
         )
     try:
-        send_mail(subject, message, 'robot@djangochannel.com', ["socanime@gmail.com"])
+        send_mail(subject, message, 'emailsenddjango@gmail.com', ["lautariano777@gmail.com"])
         return True
     except BadHeaderError:
         return False
