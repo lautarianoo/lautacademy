@@ -21,9 +21,9 @@ class PostList(ListView):
 
     def get_queryset(self):
         if self.kwargs.get("category") is not None:
-            posts = Post.objects.filter(category__slug=self.kwargs.get('category'))
+            posts = Post.objects.filter(category__slug=self.kwargs.get('category'), published=True)
         elif self.kwargs.get("tag") is not None:
-            posts = Post.objects.filter(tag__slug=self.kwargs.get('tag'))
+            posts = Post.objects.filter(tag__slug=self.kwargs.get('tag'), published=True)
         else:
             posts = Post.objects.filter(published=True)
         return posts

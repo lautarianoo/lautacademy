@@ -15,4 +15,4 @@ class UserPostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ("title", "category", "tag", "mini_text", "text",)
+        fields = ("title", "category", "tag", "mini_text", "text", "description")

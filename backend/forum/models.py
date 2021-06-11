@@ -140,6 +140,7 @@ class Message(AbstractDateTimeModel):
         on_delete=models.CASCADE
     )
     text = models.TextField('Текст сообщения')
+    parent = models.ForeignKey(User, verbose_name='Родитель', related_name='message_owner', on_delete=models.CASCADE, null=True, blank=True)
     moderated = models.BooleanField('Просмотрено модератором', default=False)
     deleted = models.BooleanField('Удалено', default=False)
     readers = models.ManyToManyField(User, blank=True)

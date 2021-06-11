@@ -1,5 +1,5 @@
 {% extends 'blog/base.html' %}
-{% load staticfiles comments_tags %}
+{% load static comments_tags %}
 
 {% block title %}{{ post.title }}{% endblock title %}
 {% block description %}{% if post.description  %}{{ post.description }}{% endif %}{% endblock description %}

@@ -37,11 +37,11 @@ class Course(AbstractImageModel):
         null=True,
         on_delete=models.SET_NULL
     )
-    description = RichTextUploadingField('Описание курса', max_length=5000)
-    program = RichTextUploadingField('Программа курса', max_length=5000, null=True)
-    target_audience = RichTextUploadingField('Целевая аудитория', max_length=5000, null=True)
-    requirements = RichTextUploadingField('Требования', max_length=5000, null=True)
-    desc_for_student = RichTextUploadingField('Описание для студентов', blank=True, null=True)
+    description = models.TextField('Описание курса', max_length=5000)
+    program = models.TextField('Программа курса', max_length=5000, null=True)
+    target_audience = models.TextField('Целевая аудитория', max_length=5000, null=True)
+    requirements = models.TextField('Требования', max_length=5000, null=True)
+    desc_for_student = models.TextField('Описание для студентов', blank=True, null=True)
     price = models.IntegerField('Стоимость курса')
     date_start = models.DateField('Дата начала курса')
     date_end = models.DateField('Дата окончания курса')
@@ -113,7 +113,7 @@ class Task(models.Model):
         related_name='tasks',
         on_delete=models.CASCADE)
     title = models.CharField('Название задания', max_length=50)
-    description = RichTextUploadingField('Описание задания', max_length=3000)
+    description = models.TextField('Описание задания', max_length=3000)
     date_start = models.DateTimeField('Дата начала выполнения задания')
     date_end = models.DateTimeField('Дата окончания выполнения задания')
     # questions = models.ManyToManyField(
@@ -166,8 +166,8 @@ class RealizationTask(models.Model):
         related_name='answers'
     )
     student = models.ForeignKey(User, verbose_name='Ученик', on_delete=models.CASCADE)
-    answer = RichTextUploadingField('Ответ', max_length=1000, config_name='course')
-    comment = RichTextUploadingField('Комментарий преподавателя', max_length=1500, blank=True)
+    answer = models.TextField('Ответ', max_length=1000)
+    comment = models.TextField('Комментарий преподавателя', max_length=1500, blank=True)
     success = models.BooleanField('Выполнено', default=False)
     date_create = models.DateTimeField('Дата сдачи', auto_now_add=True)
 
@@ -198,7 +198,7 @@ class MessagesTask(models.Model):
         related_name='realiz_task'
     )
     user = models.ForeignKey(User, verbose_name='Отправитель', on_delete=models.CASCADE)
-    answer = RichTextUploadingField('Сообщение', max_length=10000, config_name='course')
+    answer = models.TextField('Сообщение', max_length=10000)
     created = models.DateTimeField("Дата", auto_now_add=True)
     read = models.BooleanField("Просмотренно", default=False)
 
@@ -214,7 +214,7 @@ class MessageForStudent(models.Model):
     """Сообщение для участников курса"""
     course = models.ForeignKey(Course, verbose_name="Курс", on_delete=models.CASCADE)
     subject = models.CharField("Тема", max_length=200)
-    message = RichTextUploadingField("Сообщение")
+    message = models.TextField("Сообщение")
     send = models.BooleanField("Отправить сразу?", default=False)
     date = models.DateField("Дата", auto_now_add=True)
 

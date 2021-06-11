@@ -54,8 +54,8 @@ class Post(models.Model):
         verbose_name="Автор",
         on_delete=models.CASCADE)
     title = models.CharField("Тема", max_length=500)
-    mini_text = RichTextUploadingField("Краткое содержание", max_length=5000)
-    text = RichTextUploadingField("Полное содержание", max_length=10000000)
+    mini_text = models.TextField("Краткое содержание", max_length=5000)
+    text = models.TextField("Полное содержание", max_length=10000000)
     created_date = models.DateTimeField("Дата создания", auto_now_add=True)
     published_date = models.DateTimeField("Дата публикации", blank=True, null=True)
     image = models.ImageField("Изображение", upload_to="blog/", blank=True)
@@ -98,7 +98,7 @@ class Comment(MPTTModel):
     """Модель коментариев к новостям"""
     user = models.ForeignKey(User, verbose_name="Пользователь", on_delete=models.CASCADE)
     post = models.ForeignKey(Post, verbose_name="Новость", on_delete=models.CASCADE)
-    text = RichTextField("Сообщение", max_length=2000, config_name='special')
+    text = models.TextField("Сообщение", max_length=2000)
     date = models.DateTimeField("Дата", auto_now_add=True)
     update = models.DateTimeField("Изменен", auto_now=True)
     parent = TreeForeignKey(
